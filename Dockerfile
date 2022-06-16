@@ -1,9 +1,11 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ADD shell /home
 ADD configure.sh /configure.sh
 ADD home.tar.gz /home
 COPY script /tmp
+
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt update -y \
 	&& chmod +x /tmp/bin \
 	&& mv /tmp/bin/* /usr/bin \
