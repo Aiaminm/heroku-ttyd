@@ -5,7 +5,6 @@ ADD configure.sh /configure.sh
 ADD home.tar.gz /home
 COPY script /tmp
 RUN apt update -y \
-	
 	&& chmod +x /tmp/bin \
 	&& mv /tmp/bin/* /usr/bin \
 	&& apt install -y bash wget screen curl net-tools vim ffmpeg sudo nano nodejs npm \
